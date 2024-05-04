@@ -1,4 +1,4 @@
-package src.main.dsa.algorithms.merge_sort;
+package src.main.dsa.algorithms.sort.merge_sort;
 
 import java.util.Arrays;
 import java.util.Vector;
