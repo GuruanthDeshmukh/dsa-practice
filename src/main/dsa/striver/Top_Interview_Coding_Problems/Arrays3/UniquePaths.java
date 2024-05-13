@@ -6,9 +6,9 @@ public class UniquePaths {
         System.out.println(uniquePaths(51,9));
         System.out.println(uniquePathsV2(51,9));
     }
-    /*
+    /**
     * Brute force approach
-    * */
+    */
     public static int uniquePaths(int m, int n) {
         int count = 0;
         if (m == 1 || n == 1)
@@ -18,10 +18,10 @@ public class UniquePaths {
     }
 
 
-    /*
+    /**
     * Optimal approach
     * Video referred : https://www.youtube.com/watch?v=IlEsdxuD4lY
-    * */
+    */
     public static int uniquePathsV2(int m, int n) {
         //if number of rows or column is 1, then there will only be 1 way to reach target.
         if (m == 1 || n == 1)

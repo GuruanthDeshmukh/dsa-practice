@@ -9,9 +9,9 @@ public class TwoSum {
         System.out.println(twoSumV2(new int[]{2,7,11,15}, 9)[0]);
         System.out.println(twoSumV2(new int[]{2,7,11,15}, 9)[1]);
     }
-    /*
+    /**
     * Brute force approach
-    * */
+    */
     public static int[] twoSum(int[] nums, int target) {
         for (int i = 0; i < nums.length - 1; i++) {
             for (int j = i + 1; j < nums.length; j++) {
@@ -22,9 +22,9 @@ public class TwoSum {
         return new int[0];
     }
 
-    /*
+    /**
      * Optimal approach using Map to store the difference
-     * */
+     */
     public static int[] twoSumV2(int[] nums, int target) {
         Map<Integer, Integer> map = new HashMap<>();
         for (int i = 0; i < nums.length; i++ ) {

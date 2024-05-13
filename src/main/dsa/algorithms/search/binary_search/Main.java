@@ -18,12 +18,12 @@ public class Main {
         System.out.println(binarySearch(arr, 0, arr.length -1, 5));
     }
 
-    /*
+    /**
      * Implementation based on my understanding of below video
      * Video reference : https://www.youtube.com/watch?v=MHf6awe89xw&list=PLgUwDviBIf0pMFMWuuvDNMAkoQFi-h0ZF&index=5
      *   Striver's Binary Search.
      *
-     * */
+     */
     private static boolean binarySearchMyUnderstanding(int[] arr, int start, int end, int target) {
 
         //start crossed end, we are supposed to stop and element is missing
@@ -44,9 +44,9 @@ public class Main {
 
     }
 
-    /*
+    /**
     * Implementing approach of mentioned in video
-    * */
+    */
     public static int binarySearch (int[] arr, int start, int end, int target) {
         if (start > end)
             return -1;

@@ -11,13 +11,13 @@ public class Main {
         mergeSort(arr, 0, arr.length - 1);
         Arrays.stream(arr).sequential().forEach(System.out::println);
     }
-    /*
+    /**
     * Video reference : https://www.youtube.com/watch?v=AseUmwVNaoY
     *   Striver's Merge Sort.
     *
     * We divide array in 2 halves upto atomic level
     * Then we start merging as per their order
-    * */
+    */
     private static void mergeSort(int[] arr, int low, int high) {
 
         //base condition
