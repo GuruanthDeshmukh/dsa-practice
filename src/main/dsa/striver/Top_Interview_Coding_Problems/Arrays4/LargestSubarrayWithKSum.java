@@ -7,6 +7,7 @@ public class LargestSubarrayWithKSum {
 
     public static void main(String[] args) {
         int[] arr = new int[]{1,-1,3,2,-2,-8,1,7,10,23};
+        System.out.println(maxLen(arr, arr.length));
         System.out.println(maxLenV2(arr, arr.length));
     }
 
@@ -19,7 +20,7 @@ public class LargestSubarrayWithKSum {
      * @param n Size of array
      * @return size of maximum sub array with sum zero
      */
-    public static int maxLen(int arr[], int n) {
+    public static int maxLen(int[] arr, int n) {
 //        int result = 0;
 //        for (int i = 0; i < n; i++) {
 //            int count = 1;
@@ -91,11 +92,11 @@ public class LargestSubarrayWithKSum {
     /**
      * Optimal approach.
      * <a href="https://www.youtube.com/watch?v=xmguZ6GbatA">Solution Link Referred</a>
-     * @param arr
-     * @param n
-     * @return
+     * @param arr Input array
+     * @param n Size of array
+     * @return Size of maximum subarray with sum 0.
      */
-    public static int maxLenV2(int arr[], int n) {
+    public static int maxLenV2(int[] arr, int n) {
 
         int max = 0;
         int sum = 0;
