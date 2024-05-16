@@ -6,7 +6,7 @@ import java.util.Map;
 public class CountNumberOfSubarraysWithGivenXorK {
 
     public static void main(String[] args) {
-        System.out.println(solve(new int[]{4, 2, 2, 6, 4}, 6));
+        System.out.println(solveV2(new int[]{4, 2, 2, 6, 4}, 6));
     }
 
     /**
@@ -38,13 +38,26 @@ public class CountNumberOfSubarraysWithGivenXorK {
         return count;
     }
 
+    /**
+     * Optimal approach
+     * <a href = https://www.youtube.com/watch?v=eZr-6p0B7ME> Solution Video
+     *
+     * @param A Input array
+     * @param B Target
+     * @return count of subarrays with XOR equal to B
+     */
     public static int solveV2(int[] A, int B) {
         int count = 0;
         int xor = 0;
         Map<Integer, Integer> map = new HashMap<>();
-        for (int i = 0; i < A.length; i++) {
-            xor ^= A[i];
+        map.put(0, 1);
+        for (int j : A) {
+            xor ^= j;
+            int x = B ^ xor;
+            if (map.containsKey(x))
+                count += map.get(x);
 
+            map.put(xor, map.getOrDefault(xor, 0) + 1);
         }
         return count;
     }
