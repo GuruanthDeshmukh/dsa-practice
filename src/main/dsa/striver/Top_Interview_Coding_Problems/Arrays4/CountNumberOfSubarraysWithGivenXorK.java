@@ -1,5 +1,8 @@
 package src.main.dsa.striver.Top_Interview_Coding_Problems.Arrays4;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class CountNumberOfSubarraysWithGivenXorK {
 
     public static void main(String[] args) {
@@ -37,8 +40,12 @@ public class CountNumberOfSubarraysWithGivenXorK {
 
     public static int solveV2(int[] A, int B) {
         int count = 0;
+        int xor = 0;
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int i = 0; i < A.length; i++) {
+            xor ^= A[i];
 
-
+        }
         return count;
     }
 }
