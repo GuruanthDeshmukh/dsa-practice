@@ -12,6 +12,11 @@ public class NextPermutation {
         Arrays.stream(arr).sequential().forEach(value -> System.out.print(value + " "));
     }
 
+    /**
+     * <a href="https://www.youtube.com/watch?v=IhsUbEMfIbY">Solution Video</a>
+     *
+     * @param nums Input Number
+     */
     public static void nextPermutation(int[] nums) {
         int i = nums.length-2;
         if (i>=0) {

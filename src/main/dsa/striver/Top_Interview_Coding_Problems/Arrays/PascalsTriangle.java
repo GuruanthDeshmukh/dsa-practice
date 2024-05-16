@@ -5,10 +5,21 @@ import java.util.List;
 
 public class PascalsTriangle {
     public static void main(String[] args) {
-        generate(5);
+        List<List<Integer>> list = generate(5);
+        list.forEach(row -> {
+            row.forEach(element -> System.out.print(row + " "));
+            System.out.println();
+        });
     }
+
+    /**
+     * <a href="https://www.youtube.com/watch?v=nPVEaB3AjUM">Solution Video</a>
+     *
+     * @param numRows Size of the triangle
+     * @return List of List of Integers in Triangular fashion
+     */
     public static List<List<Integer>> generate(int numRows) {
-        List<List<Integer>> result = new ArrayList<List<Integer>>();
+        List<List<Integer>> result = new ArrayList<>();
         List<Integer> list = new ArrayList<>();
         list.add(1);
         result.add(list);

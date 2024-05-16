@@ -6,12 +6,19 @@ public class MaximumSubarray {
         System.out.println(maxSubArray(new int[]{5}));
     }
 
-    public static int maxSubArray(int[] nums) {
+    /**
+     * Kadane's Algorithm for finding maximum sum of sub-array
+     * <a href="https://www.youtube.com/watch?v=AHZpyENo7k4">Solution Video</a>
+     *
+     * @param arr Input array
+     * @return Desired sum
+     */
+    public static int maxSubArray(int[] arr) {
 
         int sum = 0;
         int max = Integer.MIN_VALUE;
 
-        for (int num : nums) {
+        for (int num : arr) {
             sum += num;
             max = Math.max(max, sum);
             if (0 > sum) {

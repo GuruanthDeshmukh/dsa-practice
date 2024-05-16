@@ -1,33 +1,34 @@
 package src.main.dsa.striver.Top_Interview_Coding_Problems.Arrays;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class SetMatrixZero {
 
     /**
      * Set all rows and columns to 0 for an element which is 0
-     * Striver SDE sheet link : https://takeuforward.org/data-structure/set-matrix-zero/
-     * Leetcode link : https://leetcode.com/problems/set-matrix-zeroes/description/
-     * @param args
+     * <a href="https://takeuforward.org/data-structure/set-matrix-zero/">Striver SDE sheet link</a>
+     * <a href="https://leetcode.com/problems/set-matrix-zeroes/description/">Leetcode link</a>
+     * @param args CMD arguments
      */
     public static void main(String[] args) {
-        int arr[][] = new int[][] {{1,1,1},{1,0,1},{1,1,1}};
+        int[][] arr = new int[][]{{1, 1, 1}, {1, 0, 1}, {1, 1, 1}};
         setZeroes(arr);
-        System.out.println("arr : " + arr);
-        for(int i=0;i<arr.length;i++) {
-            for(int j=0;j<arr[i].length;j++) {
-                System.out.print(arr[i][j]+" ");
+        System.out.println("arr : " + Arrays.deepToString(arr));
+        for (int[] value : arr) {
+            for (int i : value) {
+                System.out.print(i + " ");
             }
             System.out.println();
         }
 
-        int arr2[][] = new int[][] {{0,1,1},{1,0,1},{1,1,1}};
-        System.out.println("arr2 : " + arr2);
+        int[][] arr2 = new int[][]{{0, 1, 1}, {1, 0, 1}, {1, 1, 1}};
+        System.out.println("arr2 : " + Arrays.deepToString(arr2));
         setZeroesOptimized(arr2);
-        for(int i=0;i<arr2.length;i++) {
-            for(int j=0;j<arr2[i].length;j++) {
-                System.out.print(arr2[i][j]+" ");
+        for (int[] ints : arr2) {
+            for (int anInt : ints) {
+                System.out.print(anInt + " ");
             }
             System.out.println();
         }
@@ -35,7 +36,7 @@ public class SetMatrixZero {
 
     /**
      * Brute force approach by me
-     * @param matrix
+     * @param matrix Input 2x2 matrix
      */
     public static void setZeroes(int[][] matrix) {
         List<Integer> iZeros = new ArrayList<>();
@@ -56,8 +57,8 @@ public class SetMatrixZero {
 
     /**
      * Optimized approach by <i>Nikhil Lohia</i>
-     * Video Link : https://youtu.be/dSxt3ZCbIqA?si=qcxRVWkW8SkPHYEL
-     * @param matrix
+     * Video Link : <a href="https://youtu.be/dSxt3ZCbIqA?si=qcxRVWkW8SkPHYEL"> Solution Video</a>
+     * @param matrix Input 2D array
      */
     public static void setZeroesOptimized(int[][] matrix) {
         boolean firstRowZero = false;
