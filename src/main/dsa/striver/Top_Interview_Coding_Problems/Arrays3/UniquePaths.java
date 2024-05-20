@@ -5,6 +5,7 @@ public class UniquePaths {
     public static void main(String[] args) {
         System.out.println(uniquePaths(51,9));
         System.out.println(uniquePathsV2(51,9));
+        System.out.println(uniquePathsV3(51, 9));
     }
     /**
     * Brute force approach
@@ -19,9 +20,9 @@ public class UniquePaths {
 
 
     /**
-    * Optimal approach
-    * Video referred : https://www.youtube.com/watch?v=IlEsdxuD4lY
-    */
+     * Optimal approach
+     * Video referred : <a href="https://www.youtube.com/watch?v=IlEsdxuD4lY">Video</a>
+     */
     public static int uniquePathsV2(int m, int n) {
         //if number of rows or column is 1, then there will only be 1 way to reach target.
         if (m == 1 || n == 1)
@@ -46,5 +47,20 @@ public class UniquePaths {
 
         // total number of ways is going to be sum of 1st element in 1st row and 1st column.
         return matrix[0][1] + matrix[1][0];
+    }
+
+    /**
+     * Using mathematics
+     * <a href="https://www.youtube.com/watch?v=t_f0nwwdg5o">Solution Video</a>
+     */
+    public static int uniquePathsV3(int m, int n) {
+        long result = 1;
+        int newN = m + n - 2;
+        int r = (m < n) ? (m - 1) : (n - 1);
+        for (int i = 1; i <= r; i++) {
+            result = result * (newN - r + i);
+            result = result / i;
+        }
+        return (int) result;
     }
 }
