@@ -35,4 +35,5 @@ public class DeleteNodeInLinkedList {
     public static void deleteNode(ListNode node) {
 
     }
+
 }
