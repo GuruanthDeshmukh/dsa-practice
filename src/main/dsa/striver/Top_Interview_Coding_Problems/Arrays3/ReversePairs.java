@@ -23,5 +23,4 @@ public class ReversePairs {
         return count;
     }
 
-
 }
