@@ -3,7 +3,7 @@ package src.main.dsa.striver.Top_Interview_Coding_Problems.Arrays2;
 import java.util.HashMap;
 import java.util.Map;
 
-public class FIndTheDuplicateNumbers {
+public class FindTheDuplicateNumbers {
     public static void main(String[] args) {
         System.out.println(findDuplicate2(new int[]{1, 3, 4, 2, 2}));
     }

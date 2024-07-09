@@ -1,12 +1,14 @@
 package src.main.dsa.striver.Top_Interview_Coding_Problems.Arrays4;
 
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
 public class LongestConsecutiveSequence {
 
     public static void main(String[] args) {
 //        System.out.println(longestConsecutive(new int[]{1,2,0,1}));
-        System.out.println(longestConsecutive(new int[]{9, 1, 4, 7, 3, -1, 0, 5, 8, -1, 6}));
+        System.out.println(longestConsecutiveV2(new int[]{9, 1, 4, 7, 3, -1, 0, 5, 8, -1, 6}));
 //        System.out.println(longestConsecutive(new int[]{0,3,7,2,5,8,4,6,0,1}));
     }
 
@@ -53,4 +55,49 @@ public class LongestConsecutiveSequence {
        Beats
            80.22% of users with Java
     */
+
+    public static int longestConsecutiveV2(int[] nums) {
+
+        if (0 == nums.length) return 0;
+
+        int result = 1;
+        int count = 1;
+        Set<Integer> set = new HashSet<>();
+        for (int num : nums) {
+            set.add(num);
+        }
+
+        //my understanding
+        for (int num : nums) {
+            if (set.contains(num - 1)) {
+                count = 1;
+                result = Math.max(result, count);
+                continue;
+            }
+
+            while (set.contains(num)) {
+                count++;
+                num++;
+            }
+
+            result = Math.max(result, count);
+        }
+
+//        //striver method
+//        for (int it : set) {
+//            if (!set.contains(it - 1)) {
+//
+//                int cnt = 1;
+//                int x = it;
+//                while (set.contains(x + 1)) {
+//                    x = x + 1;
+//                    cnt = cnt + 1;
+//                }
+//                result = Math.max(result, cnt);
+//            }
+//        }
+
+        return result;
+    }
+    
 }

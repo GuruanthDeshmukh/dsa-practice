@@ -17,7 +17,6 @@ public class RotateImage {
             Arrays.stream(row).sequential().forEach(value -> System.out.print(value + " "));
             System.out.println();
         });
-//        System.out.println(findDivision(5,4,1));
     }
 
     public static void rotate(int[][] matrix) {
@@ -25,13 +24,7 @@ public class RotateImage {
         for (int i = 0; i <= matrix.length / 2; i++) {
             for (int j = 0; j <= matrix[i].length / 2; j++) {
                 swap2(matrix, i, j);
-                totalSwaps++;
-                System.out.println("Current step : " + totalSwaps);
-                Arrays.stream(matrix).sequential().forEach(row -> {
-                    Arrays.stream(row).sequential().forEach(value -> System.out.print(value + " "));
-                    System.out.println();
-                });
-                System.out.println();
+                totalSwaps = printMatrix(matrix, totalSwaps);
             }
         }
     }
@@ -51,19 +44,11 @@ public class RotateImage {
     }
 
     public static void rotate2(int[][] matrix) {
-        int totalSwaps = 0;
+//        int totalSwaps = 0;
         for (int k = 0; k < (matrix.length + 1) / 2; k++) {
             for (int i = 0; i < matrix.length / 2; i++) {
-//            for (int j=0; j<=matrix[i].length/2; j++){
                 swap3(matrix, k, i);
-                totalSwaps++;
-                System.out.println("Current step : " + totalSwaps);
-                Arrays.stream(matrix).sequential().forEach(row -> {
-                    Arrays.stream(row).sequential().forEach(value -> System.out.print(value + " "));
-                    System.out.println();
-                });
-                System.out.println();
-//            }
+//                totalSwaps = printMatrix(matrix, totalSwaps);
             }
         }
     }
@@ -74,6 +59,17 @@ public class RotateImage {
         matrix[matrix.length - 1 - j][i] = matrix[matrix.length - 1 - i][matrix.length - 1 - j];
         matrix[matrix.length - 1 - i][matrix.length - 1 - j] = matrix[j][matrix.length - 1 - i];
         matrix[j][matrix.length - 1 - i] = temp;
+    }
+
+    private static int printMatrix(int[][] matrix, int totalSwaps) {
+        totalSwaps++;
+        System.out.println("Current step : " + totalSwaps);
+        Arrays.stream(matrix).sequential().forEach(row -> {
+            Arrays.stream(row).sequential().forEach(value -> System.out.print(value + " "));
+            System.out.println();
+        });
+        System.out.println();
+        return totalSwaps;
     }
 
 //    public static String findDivision(int x, int y, int n) {

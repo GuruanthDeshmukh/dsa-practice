@@ -7,7 +7,22 @@ import java.util.List;
 
 public class MergeIntervals {
     public static void main(String[] args) {
-        mergeOverlappingIntervals(new int[][]{});
+        int[][] arr = new int[][]{{1, 3}, {8, 10}, {2, 6}, {15, 18}};
+        System.out.println("Before Merging");
+        Arrays.stream(arr).sequential().forEach(subarr -> {
+            Arrays.stream(subarr).sequential().forEach(element -> {
+                System.out.print(element + " ");
+            });
+            System.out.println();
+        });
+        int[][] resp = mergeOverlappingIntervals(arr);
+        System.out.println("After Merging");
+        Arrays.stream(resp).sequential().forEach(subarr -> {
+            Arrays.stream(subarr).sequential().forEach(element -> {
+                System.out.print(element + " ");
+            });
+            System.out.println();
+        });
     }
 
     public static int[][] mergeOverlappingIntervals(int[][] arr) {
@@ -22,8 +37,13 @@ public class MergeIntervals {
         int[] current = arr[0];
         response.add(current);
 
-        for (int i = 0; i < arr.length; i++) {
-//            if(arr[i][])
+        for (int[] interval : arr) {
+            if (current[1] >= interval[0]) {
+                current[1] = Math.max(current[1], interval[1]);
+            } else {
+                current = interval;
+                response.add(current);
+            }
         }
 
         return response.toArray(new int[response.size()][]);

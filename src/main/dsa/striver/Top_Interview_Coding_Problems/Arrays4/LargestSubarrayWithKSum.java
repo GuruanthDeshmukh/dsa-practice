@@ -6,9 +6,11 @@ import java.util.Map;
 public class LargestSubarrayWithKSum {
 
     public static void main(String[] args) {
-        int[] arr = new int[]{1,-1,3,2,-2,-8,1,7,10,23};
-        System.out.println(maxLen(arr, arr.length));
-        System.out.println(maxLenV2(arr, arr.length));
+        int[] arr = new int[]
+//                {1,-1,3,2,-2,-8,1,7,10,23};
+                {1, 2, 3, 1, 1, 1, 1,};
+//        System.out.println(maxLen(arr, arr.length));
+        System.out.println(maxLenV3(arr, 3));
     }
 
     /**
@@ -119,4 +121,26 @@ public class LargestSubarrayWithKSum {
 
         return max;
     }
+
+    public static int maxLenV3(int[] arr, int n) {
+
+        int max = 0;
+        int sum = 0;
+        int left = 0;
+        int right = 0;
+        while (left <= right && right < arr.length) {
+            sum += arr[right];
+            if (n == sum) {
+                max = Math.max(max, right - left + 1);
+            } else if (n < sum) {
+                while (n < sum) {
+                    sum -= arr[left];
+                    left++;
+                }
+            }
+            right++;
+        }
+        return max;
+    }
+
 }

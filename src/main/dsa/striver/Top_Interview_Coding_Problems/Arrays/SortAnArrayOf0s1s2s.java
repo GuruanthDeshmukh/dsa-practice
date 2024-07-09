@@ -21,18 +21,18 @@ public class SortAnArrayOf0s1s2s {
      * @param args Array 0, 1 and 2
      */
     public static void solve(int[] args) {
-        int i = 0, j = 0, k = args.length - 1;
+        int start = 0, mid = 0, end = args.length - 1;
 
-        while (j <= k) {
-            if (args[j] == 0) {
-                swap(args, i, j);
-                i++;
-                j++;
-            } else if (args[j] == 1) {
-                j++;
+        while (mid <= end) {
+            if (args[mid] == 0) {
+                swap(args, start, mid);
+                start++;
+                mid++;
+            } else if (args[mid] == 1) {
+                mid++;
             } else {
-                swap(args, j, k);
-                k--;
+                swap(args, mid, end);
+                end--;
             }
         }
 

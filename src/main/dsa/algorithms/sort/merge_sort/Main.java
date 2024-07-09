@@ -12,12 +12,11 @@ public class Main {
         Arrays.stream(arr).sequential().forEach(System.out::println);
     }
     /**
-    * Video reference : https://www.youtube.com/watch?v=AseUmwVNaoY
-    *   Striver's Merge Sort.
-    *
-    * We divide array in 2 halves upto atomic level
-    * Then we start merging as per their order
-    */
+     * Video reference : <a href="https://www.youtube.com/watch?v=AseUmwVNaoY">Striver's Merge Sort.</a>
+     * <p>
+     * We divide an array in two halves up to atomic level
+     * Then we start merging as per their order
+     */
     private static void mergeSort(int[] arr, int low, int high) {
 
         //base condition
