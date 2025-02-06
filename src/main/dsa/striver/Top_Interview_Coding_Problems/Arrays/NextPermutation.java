@@ -7,7 +7,9 @@ public class NextPermutation {
     public static void main(String[] args) {
         int[] arr = new int[]
 //                {1,3,2};
-                {2, 1, 5, 4, 3, 0, 0};
+//                {3,2,1};
+//                {2, 1, 5, 4, 3, 0, 0};
+                {5, 1, 1};
         Arrays.stream(arr).sequential().forEach(value -> System.out.print(value + " "));
         System.out.println();
         nextPermutation(arr);
@@ -28,7 +30,7 @@ public class NextPermutation {
             }
             if (index >= 0) {
                 int j = nums.length - 1;
-                while (j >= 0 && nums[j] <= nums[index]) {
+                while (j >= index && nums[j] <= nums[index]) {
                     j--;
                 }
                 swap(nums, index, j);
