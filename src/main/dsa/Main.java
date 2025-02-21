@@ -21,9 +21,34 @@ public class Main {
 //        System.out.println(canRearrangeToMatch("0011",List.of(new String[]{"0?10","0011","????"})));
 //        System.out.println(canRearrangeToMatch("101011",List.of(new String[]{"???111","001101"})));
 //        System.out.println(isPalindrome(121));
-        String x = "Greatest/ n]]am\\e e[*ver :in e?xis[/tance".replaceAll("[/\\\\?*\\[\\]:]", "#");
-        System.out.println(x);
-        new Main().m1(null);
+//        String x = "Greatest/ n]]am\\e e[*ver :in e?xis[/tance".replaceAll("[/\\\\?*\\[\\]:]", "#");
+//        System.out.println(x);
+//        new Main().m1(null);
+
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        int c = sc.nextInt();
+        int count = 0;
+
+        while (a < c && b < c) {
+            if (a < b) {
+                a = a + b;
+                count++;
+            } else {
+                b = b + a;
+                count++;
+            }
+        }
+        while (a < c) {
+            a = b + a;
+            count++;
+        }
+        while (b < c) {
+            b = b + a;
+            count++;
+        }
+        System.out.println(count);
     }
 
     public static boolean isPalindrome(int x) {
