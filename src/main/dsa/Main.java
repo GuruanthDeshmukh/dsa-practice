@@ -25,30 +25,46 @@ public class Main {
 //        System.out.println(x);
 //        new Main().m1(null);
 
-        Scanner sc = new Scanner(System.in);
-        int a = sc.nextInt();
-        int b = sc.nextInt();
-        int c = sc.nextInt();
-        int count = 0;
+//        Scanner sc = new Scanner(System.in);
+//        int a = sc.nextInt();
+//        int b = sc.nextInt();
+//        int c = sc.nextInt();
+//        int count = 0;
+//
+//        while (a < c && b < c) {
+//            if (a < b) {
+//                a = a + b;
+//                count++;
+//            } else {
+//                b = b + a;
+//                count++;
+//            }
+//        }
+//        while (a < c) {
+//            a = b + a;
+//            count++;
+//        }
+//        while (b < c) {
+//            b = b + a;
+//            count++;
+//        }
+//        System.out.println(count);
 
-        while (a < c && b < c) {
-            if (a < b) {
-                a = a + b;
-                count++;
-            } else {
-                b = b + a;
-                count++;
-            }
+        System.out.println(burned(7, 2));
+        System.out.println(burned(100, 5));
+
+    }
+
+    public static int burned(int n, int k) {
+        if (k > n)
+            return n;
+
+        int ans = 0;
+        while (n >= k) {
+            ans += k;
+            n -= (k - 1);
         }
-        while (a < c) {
-            a = b + a;
-            count++;
-        }
-        while (b < c) {
-            b = b + a;
-            count++;
-        }
-        System.out.println(count);
+        return ans + n;
     }
 
     public static boolean isPalindrome(int x) {

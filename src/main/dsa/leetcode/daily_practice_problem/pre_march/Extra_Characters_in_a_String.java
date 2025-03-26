@@ -1,4 +1,4 @@
-package src.main.dsa.leetcode.daily_practice_problem;
+package src.main.dsa.leetcode.daily_practice_problem.pre_march;
 
 import java.util.Arrays;
 import java.util.HashSet;

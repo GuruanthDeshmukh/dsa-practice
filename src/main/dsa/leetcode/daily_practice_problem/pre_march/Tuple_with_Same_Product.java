@@ -1,4 +1,4 @@
-package src.main.dsa.leetcode.daily_practice_problem;
+package src.main.dsa.leetcode.daily_practice_problem.pre_march;
 
 public class Tuple_with_Same_Product {
     public static void main(String[] args) {

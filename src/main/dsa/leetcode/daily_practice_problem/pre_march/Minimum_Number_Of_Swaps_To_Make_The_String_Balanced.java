@@ -1,4 +1,4 @@
-package src.main.dsa.leetcode.daily_practice_problem;
+package src.main.dsa.leetcode.daily_practice_problem.pre_march;
 
 /*
 You are given a 0-indexed string s of even length n. The string consists of exactly

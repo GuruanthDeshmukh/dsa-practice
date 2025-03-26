@@ -1,4 +1,4 @@
-package src.main.dsa.leetcode.daily_practice_problem;
+package src.main.dsa.leetcode.daily_practice_problem.pre_march;
 
 public class Minimized_Maximum_of_Products_Distributed_to_Any_Store {
 

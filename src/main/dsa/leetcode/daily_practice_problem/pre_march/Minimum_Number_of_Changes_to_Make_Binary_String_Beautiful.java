@@ -1,4 +1,4 @@
-package src.main.dsa.leetcode.daily_practice_problem;
+package src.main.dsa.leetcode.daily_practice_problem.pre_march;
 
 public class Minimum_Number_of_Changes_to_Make_Binary_String_Beautiful {
 
