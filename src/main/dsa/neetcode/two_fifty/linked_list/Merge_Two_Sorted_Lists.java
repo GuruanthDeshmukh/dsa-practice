@@ -40,9 +40,13 @@ public class Merge_Two_Sorted_Lists {
 
     public static void main(String[] args) {
         System.out.println(mergeTwoLists(createList(new int[]{1, 2, 4}), createList(new int[]{1, 3, 4})));
+        System.out.println(mergeTwoListsV2(createList(new int[]{1, 2, 4}), createList(new int[]{1, 3, 4})));
         System.out.println(mergeTwoLists(createList(new int[]{}), createList(new int[]{})));
+        System.out.println(mergeTwoListsV2(createList(new int[]{}), createList(new int[]{})));
         System.out.println(mergeTwoLists(createList(new int[]{}), createList(new int[]{0})));
+        System.out.println(mergeTwoListsV2(createList(new int[]{}), createList(new int[]{0})));
         System.out.println(mergeTwoLists(createList(new int[]{1}), createList(new int[]{})));
+        System.out.println(mergeTwoListsV2(createList(new int[]{1}), createList(new int[]{})));
     }
 
     public static ListNode mergeTwoLists(ListNode list1, ListNode list2) {
@@ -90,5 +94,29 @@ public class Merge_Two_Sorted_Lists {
             temp2 = temp2.next;
         }
         return res;
+    }
+
+    public static ListNode mergeTwoListsV2(ListNode list1, ListNode list2) {
+        ListNode dummy = new ListNode();
+        ListNode pointer = dummy;
+
+        while (list1 != null && list2 != null) {
+            if (list1.val < list2.val) {
+                pointer.next = list1;
+                list1 = list1.next;
+            } else {
+                pointer.next = list2;
+                list2 = list2.next;
+            }
+            pointer = pointer.next;
+        }
+
+        if (list1 != null)
+            pointer.next = list1;
+
+        if (list2 != null)
+            pointer.next = list2;
+
+        return dummy.next;
     }
 }
