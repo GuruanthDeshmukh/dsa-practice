@@ -1,0 +1,25 @@
+1. Product are in DB
+2. For offers we need to call 3rd party API
+3. Only 1 product offers info can be given a single call
+4. UI will call only 1 API from backend and backend to provide all offer info in 1 call
+OR
+4. UI can call API multiple times
+
+A, B, C - cart
+UI -> API (A,B,C)
+API -> Offer for A, Offer for B, Offer C ->
+
+
+API - > DB (available Products) -> Offer for the product ->
+1. Offer available :
+
+{
+    product:
+        offer:
+}
+
+
+Employee - employee_id,
+
+SELECT e.employee_name, DISTINCT(d.department_name) FROM employee e JOIN department d ON e.department_id = d.department_id GROUP BY e.department_id
+ORDER BY e.salary DESC

@@ -1,7 +1,5 @@
 package src.main.dsa.gfg.problems;
 
-import java.util.Arrays;
-
 public class LeftRotateMatrixKTimes {
 
     public static void main(String[] args) {

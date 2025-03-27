@@ -1,7 +1,6 @@
 package src.main.dsa.gfg.problems;
 
 import java.util.Arrays;
-import java.util.Collections;
 
 public class RotateArray {
 
